@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages   # 🔥 이 부분 추가
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,4 +35,5 @@ jobs:
           path: dist
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
